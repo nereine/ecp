@@ -13,8 +13,7 @@ func readF(fname string) []byte {
 }
 
 func writeF(src string, dst string) {
-	data := readF(src)
-	err := os.WriteFile(dst, data, 0777)
+	err := os.WriteFile(dst, readF(src), 0777)
 	if err != nil {
 		panic(err)
 	}
